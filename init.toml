@@ -1,0 +1,85 @@
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    colorscheme = "nord" # was gruvbox
+#    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arrow"
+    statusline_inactive_separator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = false
+    guifont = "JetBrainsMono Nerd Font:h16"
+    filetree_direction = "left"
+    autocomplete_method = "coc"
+
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+auto_completion_return_key_behavior = "complete"
+auto_completion_tab_key_behavior = "smart"
+
+# these two are required to make the below work
+# also, you will need to do `pip3 install --user msgpack
+# and pip3 install --user pynvim
+[[custom_plugins]]
+repo = "roxma/nvim-yarp"
+
+[[custom_plugins]]
+repo = "roxma/vim-hug-neovim-rpc"
+
+[[layers]]
+name = "git"
+
+[[layers]]
+name = "denite"
+
+[[layers]]
+name = 'shell'
+default_position = 'bottom'
+default_height = 30
+
+[[layers]]
+name = "colorscheme"
+
+[[layers]]
+name = "lang#php"
+
+[[layers]]
+name = "lang#javascript"
+
+[[layers]]
+name = "lang#python"
+
+[[layers]]
+name = "lang#java"
+
+## You have to install Eclipse to use the java LSP and it only works with 11 anyway. Cool.
+#[[layers]]
+#  name = "lsp"
+#  filetypes = [
+#    "java"
+#  ]
+#  [layers.override_cmd]
+#    java = [
+#    "java",
+#    "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+#    "-Dosgi.bundles.defaultStartLevel=4",
+#    "-Declipse.product=org.eclipse.jdt.ls.core.product",
+#    "-Dlog.protocol=true",
+#    "-Dlog.level=NONE",
+#    "-noverify",
+#    "-Xmx1G",
+#    "-jar",
+#    "D:\\dev\\jdt-language-server-latest\\plugins\\org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar",
+#    "-configuration",
+#    "D:\\dev\\jdt-language-server-latest\\config_win",
+#    "-data",
+#    "C:\\Users\\Administrator\\.cache\\javalsp"
+#    ]
